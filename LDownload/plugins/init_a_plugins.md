@@ -12,14 +12,15 @@ LDownload 下载器支持插件的扩展，你可以通过编写Python脚本来�
 ```python
 def need():
     return "go,add_file"
-def run():
+def run(go,add_file):
     print("Hello, world!")
 
 def description():
     return "This is a sample plugin."
 ```
 
-run函数将会在插件被激活时执行，description函数将会返回插件的描述，need函数将会返回插件需要的参数，可以用这个使用Plugin API中没有但是源文件中有的方法。
+run函数将会在插件被激活时执行，description函数将会返回插件的描述，need函数将会返回插件需要的参数，可以用这个使用Plugin API中没有但是源文件中有的方法。  
+2024/12/7补充：need函数填写的参数必须与run函数调用的参数一致，否则会报错。
 
 ## Plugin API/Plugin API
 LDownload 下载器提供了一些API，你可以在run函数中调用这些API。  
@@ -44,13 +45,14 @@ class PluginsAPI:
 - run_download(): 启动下载器
 
 ### 调用Plugin API/Use Plugin API
-在run函数中调用Plugin API
-
+在run函数中调用Plugin API  
+实例：
 ```python
+# plugins/sample.py
 def need():
     return "PluginsAPI"
 
-def run():
+def run(PluginsAPI):
     api = PluginsAPI("plugins")
     api.add_file("https://www.example.com/file.zip")
     api.run_download()
