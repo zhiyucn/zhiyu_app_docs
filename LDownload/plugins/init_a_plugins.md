@@ -10,13 +10,24 @@ LDownload 下载器支持插件的扩展，你可以通过编写Python脚本来�
 定义run,need和description三个函数
 
 ```python
-def need():
-    return "go,add_file"
-def run(go,add_file):
-    print("Hello, world!")
+class PluginsAPI:
+    def __init__(self, plugin_dir):
+        self.plugin_dir = plugin_dir
+        self.descriptions = load_plugins(plugin_dir)
 
-def description():
-    return "This is a sample plugin."
+    def add_file(self, url):
+        global filelist
+        filelist.append(url)
+
+        print(filelist)
+
+    def gets_filelist(self):
+        for i in filelist:
+            print(i + " ")
+
+    def run_download(plugin_name):
+        print("插件" + plugin_name + "开始调用PluginsAPI以运行下载任务")
+        go()
 ```
 
 run函数将会在插件被激活时执行，description函数将会返回插件的描述，need函数将会返回插件需要的参数，可以用这个使用Plugin API中没有但是源文件中有的方法。  
@@ -49,14 +60,47 @@ class PluginsAPI:
 实例：
 ```python
 # plugins/sample.py
+
+def description():
+    return "This is a sample plugin."
+
 def need():
     return "PluginsAPI"
 
 def run(PluginsAPI):
-    api = PluginsAPI("plugins")
-    api.add_file("https://www.example.com/file.zip")
-    api.run_download()
+    api = PluginsAPI("PluginsAPI")
+    while True:
+        print("LDownload 命令行插件")
+        print("1. 添加文件")
+        print("2. 显示已添加文件")
+        print("3. 开始下载")
+        print("4. 退出")
+        choice = input("请输入选项：")
+        if choice == "1":
+            url = input("请输入URL：")
+            api.add_file(url)
+        elif choice == "2":
+            files = api.gets_filelist()
+            print(files)
+        elif choice == "3":
+            api.run_download()
+        elif choice == "4":
+            break
+        else:
+            print("输入错误，请重新输入！")
 ```
+解释：
+- 定义description函数，返回插件的描述。
+- 定义need函数，返回插件需要的参数。
+- 定义run函数，参数为PluginsAPI。
+- 实例化PluginsAPI，传入插件目录。
+- 循环，让用户选择功能。
+- 如果选择添加文件，则调用add_file函数，传入URL。
+- 如果选择显示已添加文件，则调用gets_filelist函数，获取下载队列中的文件。
+- 如果选择开始下载，则调用run_download函数，启动下载器。
+- 如果选择退出，则退出循环。
+- 其他情况，打印错误信息。
+
 
 ## 调试/Debug
 
