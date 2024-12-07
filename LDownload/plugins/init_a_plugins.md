@@ -162,4 +162,5 @@ def run(PluginsAPI):
 
 ## 注意事项/Cautions
 - 插件中不能使用tkinter模块，我也不知道为什么，会出现一个空白Tk窗口，关了主程序就出问题。(替代方案：使用PluginAPI的窗口创建机制，虽然基于tkinter，但没有刚才那个问题)
+2024/12/7补充：只是不能用tkinter创建窗口，messagebox等功能还是可以的。
 - 不要用控制台输出，打包主程序时有noconsole，控制台会被隐藏，所以你不能用print函数输出信息。
