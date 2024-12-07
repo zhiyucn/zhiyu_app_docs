@@ -113,3 +113,4 @@ def run(PluginsAPI):
 
 ## 注意事项/Cautions
 - 插件中不能使用tkinter模块，我也不知道为什么，会出现一个空白Tk窗口，关了主程序就出问题。
+- 不要用控制台输出，打包主程序时有noconsole，控制台会被隐藏
