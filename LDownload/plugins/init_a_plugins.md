@@ -46,14 +46,63 @@ class PluginsAPI:
     def add_file(self, url):
         global filelist
         filelist.append(url)
+
         print(filelist)
 
-    def run_download():
+    def gets_filelist(self):
+        for i in filelist:
+            print(i + " ")
+
+    def run_download(plugin_name):
+        print("插件" + plugin_name + "开始调用PluginsAPI以运行下载任务")
         go()
+
+    def plugin_window_create(self, title, geometry):
+        # 创建插件的窗口，每个插件一个窗口
+        global plugin_window
+        plugin_window.append(tk.Toplevel(mainwindow))
+        plugin_window[-1].title(title)
+        plugin_window[-1].geometry(geometry)
+    
+    def window_add_label(self, text, plugin_name):
+        # 在插件窗口中添加标签
+        global plugin_window
+        plugin_window[-1].label = tk.Label(plugin_window[-1], text=text)
+        plugin_window[-1].label.pack(pady=10)
+
+    def window_add_entry(self, text, plugin_name):
+        # 在插件窗口中添加输入框
+        global plugin_window
+        plugin_window[-1].entry = tk.Entry(plugin_window[-1])
+        plugin_window[-1].entry.pack(pady=10)
+
+    def window_add_button(self, text, plugin_name, command):
+        # 在插件窗口中添加按钮
+        global plugin_window
+        plugin_window[-1].button = tk.Button(plugin_window[-1], text=text, command=command)
+        plugin_window[-1].button.pack(pady=10)
+
+    def read_add_entry(self, plugin_name):
+        # 读取插件窗口中的输入框内容
+        global plugin_window
+        return plugin_window[-1].entry.get()
+
+    def window_destroy(self, plugin_name):
+        # 销毁插件窗口
+        global plugin_window
+        plugin_window[-1].destroy()
+        plugin_window.pop()
 ```
 
 - add_file(url): 向下载队列中添加一个文件
+- gets_filelist(): 获取下载队列中的文件
 - run_download(): 启动下载器
+- plugin_window_create(title, geometry): 创建插件的窗口，每个插件一个窗口
+- window_add_label(text, plugin_name): 在插件窗口中添加标签
+- window_add_entry(text, plugin_name): 在插件窗口中添加输入框
+- window_add_button(text, plugin_name, command): 在插件窗口中添加按钮
+- read_add_entry(plugin_name): 读取插件窗口中的输入框内容
+- window_destroy(plugin_name): 销毁插件窗口
 
 ### 调用Plugin API/Use Plugin API
 在run函数中调用Plugin API  
@@ -114,4 +163,4 @@ def run(PluginsAPI):
 
 ## 注意事项/Cautions
 - 插件中不能使用tkinter模块，我也不知道为什么，会出现一个空白Tk窗口，关了主程序就出问题。
-- 不要用控制台输出，打包主程序时有noconsole，控制台会被隐藏
+- 不要用控制台输出，打包主程序时有noconsole，控制台会被隐藏，所以你不能用print函数输出信息。
