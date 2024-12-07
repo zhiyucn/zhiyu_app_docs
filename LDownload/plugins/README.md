@@ -5,11 +5,11 @@
 - requests
 - PySide6
 ## 插件开发基本流程
-| 新建Python文件
-| 创建run,description, need函数
-| 编写run函数，实现插件的主要功能
-| 编写description函数，返回插件的描述信息
-| 编写need函数，返回插件所需的参数
-|创建UI，但没法用tkinter
-|测试
-|发布到Github               
+| 新建Python文件  
+| 创建run,description, need函数  
+| 编写run函数，实现插件的主要功能  
+| 编写description函数，返回插件的描述信息  
+| 编写need函数，返回插件所需的参数  
+|创建UI，但没法用tkinter  
+|测试  
+|发布到Github  
