@@ -153,14 +153,24 @@ def run(PluginsAPI):
 - 其他情况，打印错误信息。
 ## 调试/Debug
 
-运行LDownload的exe文件或者直接从源码运行，这时会生成config.ini,LDownload文件夹和plugins文件夹,将你的插件文件放到plugins文件夹中。
-重启LDownload，这时插件就会被加载。
-如果出现一个一动不动的下载进度条，那么恭喜你，你的插件运行成功了。（至于为什么一动不动，其实是那个下载链接是我随便填的，不过下载已经开始了）
+将上面编写的插件文件放到plugins文件夹中。  
+如果你看见了：
+```bash
+LDownload 命令行插件
+1. 添加文件
+2. 显示已添加文件
+3. 开始下载
+4. 退出
+请输入选项：
+```
+说明插件已经被加载。  
+运行LDownload的exe文件或者直接从源码运行，这时会生成config.ini,LDownload文件夹和plugins文件夹,将你的插件文件放到plugins文件夹中。  
+重启LDownload，这时插件就会被加载。  
 
 ## 发布/Publish
 你可以将你的插件发布到GitHub或者其他代码托管平台，让其他人可以下载到你的插件。
 
 ## 注意事项/Cautions
-- 插件中不能使用tkinter模块，我也不知道为什么，会出现一个空白Tk窗口，关了主程序就出问题。(替代方案：使用PluginAPI的窗口创建机制，虽然基于tkinter，但没有刚才那个问题)
+- 插件中不能使用tkinter模块，我也不知道为什么，会出现一个空白Tk窗口，关了主程序就出问题。(替代方案：使用PluginAPI的窗口创建机制，虽然基于tkinter，但没有刚才那个问题)  
 2024/12/7补充：只是不能用tkinter创建窗口，messagebox等功能还是可以的。
 - 不要用控制台输出，打包主程序时有noconsole，控制台会被隐藏，所以你不能用print函数输出信息。
