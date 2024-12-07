@@ -103,6 +103,7 @@ class PluginsAPI:
 - window_add_button(text, plugin_name, command): 在插件窗口中添加按钮
 - read_add_entry(plugin_name): 读取插件窗口中的输入框内容
 - window_destroy(plugin_name): 销毁插件窗口
+2024/12/7补充：PluginAPI源码更新到1.2.1Beta
 
 ### 调用Plugin API/Use Plugin API
 在run函数中调用Plugin API  
@@ -150,8 +151,6 @@ def run(PluginsAPI):
 - 如果选择开始下载，则调用run_download函数，启动下载器。
 - 如果选择退出，则退出循环。
 - 其他情况，打印错误信息。
-
-
 ## 调试/Debug
 
 运行LDownload的exe文件或者直接从源码运行，这时会生成config.ini,LDownload文件夹和plugins文件夹,将你的插件文件放到plugins文件夹中。
@@ -162,5 +161,5 @@ def run(PluginsAPI):
 你可以将你的插件发布到GitHub或者其他代码托管平台，让其他人可以下载到你的插件。
 
 ## 注意事项/Cautions
-- 插件中不能使用tkinter模块，我也不知道为什么，会出现一个空白Tk窗口，关了主程序就出问题。
+- 插件中不能使用tkinter模块，我也不知道为什么，会出现一个空白Tk窗口，关了主程序就出问题。(替代方案：使用PluginAPI的窗口创建机制，虽然基于tkinter，但没有刚才那个问题)
 - 不要用控制台输出，打包主程序时有noconsole，控制台会被隐藏，所以你不能用print函数输出信息。
