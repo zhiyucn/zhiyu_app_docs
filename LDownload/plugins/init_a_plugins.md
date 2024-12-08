@@ -10,24 +10,17 @@ LDownload 下载器支持插件的扩展，你可以通过编写Python脚本来�
 定义run,need和description三个函数
 
 ```python
-class PluginsAPI:
-    def __init__(self, plugin_dir):
-        self.plugin_dir = plugin_dir
-        self.descriptions = load_plugins(plugin_dir)
+def run(PluginsAPI):
+    pass
 
-    def add_file(self, url):
-        global filelist
-        filelist.append(url)
+def need():
+    return "PluginsAPI"
 
-        print(filelist)
+def description():
+    return "This is a sample plugin."
 
-    def gets_filelist(self):
-        for i in filelist:
-            print(i + " ")
-
-    def run_download(plugin_name):
-        print("插件" + plugin_name + "开始调用PluginsAPI以运行下载任务")
-        go()
+def inject_class():
+    return False
 ```
 
 run函数将会在插件被激活时执行，description函数将会返回插件的描述，need函数将会返回插件需要的参数，可以用这个使用Plugin API中没有但是源文件中有的方法。  
