@@ -15,4 +15,13 @@ content：帖子内容
 
 ## 返回结果
 
-待补充
+成功：
+
+```json
+{'post_id': '帖子ID', 'status': 'ok'}
+```
+
+失败：
+```json
+{'message': '错误信息', 'status': 'error'}
+```

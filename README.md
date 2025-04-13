@@ -12,6 +12,3 @@
 [智宇论坛客户端 介绍](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/zybbs_client/README.md)  
 [智宇论坛客户端 插件开发](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/zybbs_client/plugins/README.md)  
 [智宇论坛客户端 插件开发 制作一个插件](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/zybbs_client/plugins/init_a_plugins.md)  
-[ZModLoader 介绍](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/ZModLoader/README.md)
-[ZModLoader 使用](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/ZModLoader/use.md)
-[ZModLoader 自行适配游戏](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/ZModLoader/get_a_zmod_game!.md)
