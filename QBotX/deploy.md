@@ -14,7 +14,9 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 ```powershell
 uv add -r ./requirements.txt
 ```
-4. 启动主程序
+4. 复制模板配置文件（template_config.toml）为 config.toml
+5. 编辑 config.toml，填写机器人的配置信息
+6. 启动主程序
 ```powershell
 uv run main.py
 ```
@@ -33,7 +35,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```bash
 uv add -r ./requirements.txt
 ```
-4. 启动主程序
+4. 复制模板配置文件（template_config.toml）为 config.toml
+5. 编辑 config.toml，填写机器人的配置信息
+6. 启动主程序
 ```bash
 uv run main.py
 ```
