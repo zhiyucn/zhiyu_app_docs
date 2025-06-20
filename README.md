@@ -12,3 +12,5 @@
 [智宇论坛客户端 介绍](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/zybbs_client/README.md)  
 [智宇论坛客户端 插件开发](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/zybbs_client/plugins/README.md)  
 [智宇论坛客户端 插件开发 制作一个插件](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/zybbs_client/plugins/init_a_plugins.md)  
+[QBotx 介绍](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/QBotX/README.md)  
+[QBotx 部署](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/QBotX/deploy.md)

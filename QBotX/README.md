@@ -1,0 +1,5 @@
+# QBotX
+  
+一个支持多种消息平台（需要自己编写适配器）的机器人框架  
+
+[部署教程](https://github.com/zhiyucn/zhiyu_app_docs/blob/main/QBotX/deploy.md)
