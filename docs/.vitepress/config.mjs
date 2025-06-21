@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "智宇的文档",
   description: "一些文档",
+  base: '/zhiyu_app_docs/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
