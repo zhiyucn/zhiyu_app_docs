@@ -13,10 +13,10 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'QBotx',
+        text: 'QBotX',
         items: [
-          { text: 'README', link: '/QBotx/README' },
-          { text: '部署指南', link: '/QBotx/deploy' }
+          { text: 'README', link: '/QBotX/README' },
+          { text: '部署指南', link: '/QBotX/deploy' }
         ]
       },
       {
