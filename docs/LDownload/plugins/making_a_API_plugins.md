@@ -21,7 +21,7 @@ def run():
     pass
 def description():
     return "This is a API plugin"
-def need:
+def need():
     return ""
 def inject_class():
     return False
@@ -42,7 +42,7 @@ def run(MyAPI):
     api.my_api_function()
 def description():
     return "我要调用API插件的功能"
-def need:
+def need():
     return "MyAPI"
 def inject_class():
     return False
