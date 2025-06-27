@@ -2,10 +2,15 @@
 这里没有Onebot的配置教程！请自行查找，连接方式为反向WebSocket (Napcat叫WebSocket客户端)，端口默认为8080
 ## On Windows
 ### 极简方法
+#### 源：Github Pages(推荐国外使用)
 ```powershell
 Invoke-WebRequest -Uri "http://docs.zhiyuhub.top/QBotX/install.ps1" -OutFile "$env:TEMP\install.ps1" ;; Start-Process -FilePath "powershell" -ArgumentList "-ExecutionPolicy Bypass -File $env:TEMP\install.ps1" -Wait
 ```
+#### 源：Tencent Cloud EdgeOne Pages(国内推荐)
+```powershell
+Invoke-WebRequest -Uri "https://script.zhiyuhub.top/install.ps1" -OutFile "$env:TEMP\install.ps1" ;; Start-Process -FilePath "powershell" -ArgumentList "-ExecutionPolicy Bypass -File $env:TEMP\install.ps1" -Wait
 
+```
 ### 普通方法
 1. 克隆仓库
 ```powershell
