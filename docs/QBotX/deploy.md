@@ -1,6 +1,15 @@
 # 部署
 这里没有Onebot的配置教程！请自行查找，连接方式为反向WebSocket (Napcat叫WebSocket客户端)，端口默认为8080
 ## On Windows
+::: danger 警告
+如果安装时出现提示说
+```
+error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools":
+      https://visualstudio.microsoft.com/visual-cpp-build-tools/
+```
+请先前往 https://visualstudio.microsoft.com/visual-cpp-build-tools/ 下载并安装Visual Studio生成工具
+需要勾选`Desktop development with C++`或`使用C++的桌面开发`
+:::
 ### 极简方法
 #### 源：Github Pages(推荐国外使用)
 ```powershell
