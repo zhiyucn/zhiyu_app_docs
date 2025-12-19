@@ -25,7 +25,7 @@ export default defineConfig({
           { text: 'README', link: '/LDownload/README' },
           { text: '插件', link: '/LDownload/plugins/README' },
           { text: '制作插件', link: '/LDownload/plugins/init_a_plugin' },
-          { text: '制作一个API插件', link: '/LDownload/plugins/making_API_plugin' },
+          { text: '制作一个API插件', link: '/LDownload/plugins/making_a_API_plugin' },
           { text: '使用', link: '/LDownload/use/README' }
         ]
       },
@@ -46,6 +46,13 @@ export default defineConfig({
           { text: 'README', link: '/zybbs_client/README' },
           { text: '插件', link: '/zybbs_client/plugins/README' },
           { text: '制作插件', link: '/zybbs_client/plugins/init_a_plugin' }
+        ]
+      },
+      {
+        text: 'TSL 游玩笔记',
+        items: [
+          { text: '前言', link: '/TSL/README' },
+          { text: '酿酒笔记', link: '/TSL/alcohol' },
         ]
       }
     ],
